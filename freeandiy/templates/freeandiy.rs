@@ -11,7 +11,7 @@ use std::sync::Arc;
 
 use egui::{Color32, Context, FontData, FontDefinitions, FontFamily, Id, Rect, TextureHandle, TextureOptions, Ui, Visuals};
 
-use crate::theme::{ThemeKind, Tokens};
+use crate::theme::Tokens;
 
 pub const APP_NAME: &str = "{{this.name}}";
 pub const OWNER: &str = "{{brand.owner}}";
@@ -112,6 +112,7 @@ mod tests {
 
     #[test]
     fn every_theme_takes_the_rose_accent() {
+        use crate::theme::ThemeKind;
         for kind in [ThemeKind::Dark, ThemeKind::Darker, ThemeKind::Light] {
             assert_eq!(Tokens::for_kind(kind).accent, ROSE);
         }

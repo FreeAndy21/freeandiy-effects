@@ -527,3 +527,13 @@ include = ["packaging/**", "apps/*/build.rs"]
 find = "Learning Machines LLC"
 replace = "{{brand.owner}}"
 min = 1
+
+# ---------------------------------------------------------------------------------------------
+# Tidy-ups after the patches.
+
+[[replace]]
+name = "header: the icons module is no longer called directly (the Discord button is gone)"
+include = ["crates/ui-egui/src/header.rs"]
+find = "use crate::icons::{self, Icon};"
+replace = "use crate::icons::Icon;"
+min = 1
