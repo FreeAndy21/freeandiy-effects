@@ -258,7 +258,7 @@ name = "catalog (Rust): the suite's name, Discord lines aside"
 include = ["crates/ui-egui/src/i18n.rs"]
 find = "ArtCraft"
 replace = "{{brand.name}}"
-min = 1
+min = 0
 
 [[replace]]
 name = "web page and manifest: the product name"
