@@ -114,7 +114,7 @@ foreach ($f in 'README.md', 'LICENSE', 'LICENSE-MIT', 'LICENSE-APACHE', 'NOTICE'
 Copy-Item (Join-Path $Root 'freeandiy\assets\fonts\OFL-*.txt') $Portable
 Copy-Item (Join-Path $Root 'freeandiy\assets\brand\LICENSE-brand.txt') (Join-Path $Portable 'LICENSE-FreeANDIY-brand.txt')
 # portable.txt beside freeandiy-effects.exe switches on portable mode: settings, shortcuts and recovery
-# files go to EffectCraftData\ next to the exe instead of %APPDATA% (#993; see app_dirs.rs).
+# files go to FreeANDIY Effects Data\ next to the exe instead of %APPDATA% (#993; see app_dirs.rs).
 Copy-Item (Join-Path $PSScriptRoot 'portable.txt') $Portable
 $Zip = Join-Path $Dist "freeandiy-effects-$Version-windows-$Arch-portable.zip"
 Remove-Item -Force $Zip -ErrorAction SilentlyContinue

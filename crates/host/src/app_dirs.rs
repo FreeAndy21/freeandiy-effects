@@ -4,7 +4,7 @@
 //! In order:
 //! 1. `EFFECTCRAFT_CONFIG_DIR`, when set (tests, agents, custom setups).
 //! 2. **Portable mode** (#993): a marker file ([`PORTABLE_MARKERS`]) beside the executable puts
-//!    everything in `<exe dir>/EffectCraftData`, so a portable copy on a USB stick leaves nothing in
+//!    everything in `<exe dir>/FreeANDIY Effects Data`, so a portable copy on a USB stick leaves nothing in
 //!    `%APPDATA%`. The Windows portable zip ships with `portable.txt`; the MSI doesn't. If that
 //!    folder can't be written (read-only medium, Program Files), a warning is logged and the
 //!    platform folder is used.
@@ -18,14 +18,14 @@ use std::sync::OnceLock;
 /// Files beside the executable that switch on portable mode (either one; contents are ignored).
 pub const PORTABLE_MARKERS: [&str; 2] = ["portable.txt", "FreeANDIY Effects.portable"];
 /// The data folder created beside the executable in portable mode.
-pub const PORTABLE_DATA_DIR: &str = "EffectCraftData";
+pub const PORTABLE_DATA_DIR: &str = "FreeANDIY Effects Data";
 
 /// How [`DataDir::dir`] was chosen.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mode {
     /// `EFFECTCRAFT_CONFIG_DIR`.
     Override,
-    /// `<exe dir>/EffectCraftData`.
+    /// `<exe dir>/FreeANDIY Effects Data`.
     Portable,
     /// The platform's per-user config directory.
     Platform,
@@ -159,7 +159,7 @@ mod tests {
             assert_eq!(d.mode, Mode::Portable, "{marker}");
             assert!(d.warning.is_none());
             let dir = d.dir.unwrap();
-            assert_eq!(dir, exe.join("EffectCraftData"));
+            assert_eq!(dir, exe.join("FreeANDIY Effects Data"));
             assert!(dir.is_dir(), "the data folder is created");
             assert_eq!(std::fs::read_dir(&dir).unwrap().count(), 0, "the write probe is removed");
             assert!(!root.join("home").exists() && !root.join("appdata").exists(), "nothing written to the user folder");
