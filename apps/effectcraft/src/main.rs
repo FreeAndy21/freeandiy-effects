@@ -35,11 +35,11 @@ use serde_json::json;
 /// `packaging/icons.sh`). macOS gets the padded variant so it sits on Apple's icon grid in the Dock.
 /// The 256 px app icon (Windows, Linux; the AppImage's desktop integration installs it too).
 #[cfg(not(target_os = "macos"))]
-const ICON_PNG: &[u8] = include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/ai.storyteller.effectcraft.png");
+const ICON_PNG: &[u8] = include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/agency.freeandy.effects.png");
 
 fn app_icon() -> egui::IconData {
     #[cfg(target_os = "macos")]
-    let png: &[u8] = include_bytes!("../../../assets/app-icon/effectcraft-macos-512.png");
+    let png: &[u8] = include_bytes!("../../../assets/app-icon/freeandiy-effects-1024.png");
     #[cfg(not(target_os = "macos"))]
     let png: &[u8] = ICON_PNG;
     eframe::icon_data::from_png_bytes(png).unwrap_or_default()
@@ -161,14 +161,14 @@ fn main() -> eframe::Result {
     let notice = launch.notice.take();
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("EffectCraft")
+            .with_title("FreeANDIY Effects")
             .with_inner_size(window::DEFAULT_SIZE)
             .with_min_inner_size(window::MIN_SIZE)
             .with_drag_and_drop(true)
             // Started for an agent (`--control`): open without taking the user's keyboard focus.
             .with_active(control_port.is_none())
             .with_icon(app_icon())
-            // Wayland matches the window to `ai.storyteller.effectcraft.desktop` by this ID.
+            // Wayland matches the window to `agency.freeandy.effects.desktop` by this ID.
             .with_app_id(appimage::APP_ID),
         event_loop_builder: agent_event_loop(control_port.is_some()),
         wgpu_options: wgpu_options(launch.backends),
@@ -184,7 +184,7 @@ fn main() -> eframe::Result {
     #[cfg(target_os = "macos")]
     let apple_events = &apple_events;
     let result = eframe::run_native(
-        "EffectCraft",
+        "FreeANDIY Effects",
         options,
         Box::new(move |cc| {
             match &cc.wgpu_render_state {
@@ -265,26 +265,30 @@ fn main() -> eframe::Result {
                 rfd::FileDialog::new().add_filter("Media", exts).pick_files().unwrap_or_default().into_iter().map(|p| p.to_string_lossy().to_string()).collect()
             }));
             app.hooks.pick_save = Some(Box::new(|name: &str| {
-                rfd::FileDialog::new().add_filter("EffectCraft Project", &["ecproj"]).set_file_name(name).save_file().map(|p| p.to_string_lossy().to_string())
+                rfd::FileDialog::new()
+                    .add_filter("FreeANDIY Effects Project", &["ecproj"])
+                    .set_file_name(name)
+                    .save_file()
+                    .map(|p| p.to_string_lossy().to_string())
             }));
             // The window closes after a lost graphics device (#591); say why, unless an agent drives
             // the app through the control channel.
             if control_port.is_none() {
                 app.hooks.device_lost = Some(Box::new(|saved: Option<Result<String, String>>| {
                     let saved = match saved {
-                        Some(Ok(path)) => format!("\n\nYour unsaved changes were saved to:\n{path}\n\nReopen EffectCraft to recover them."),
+                        Some(Ok(path)) => format!("\n\nYour unsaved changes were saved to:\n{path}\n\nReopen FreeANDIY Effects to recover them."),
                         Some(Err(e)) => format!("\n\nYour unsaved changes could not be saved ({e})."),
                         None => String::new(),
                     };
                     rfd::MessageDialog::new()
                         .set_level(rfd::MessageLevel::Error)
-                        .set_title("EffectCraft: graphics device lost")
-                        .set_description(format!("The graphics driver stopped responding, so EffectCraft has to close.{saved}"))
+                        .set_title("FreeANDIY Effects: graphics device lost")
+                        .set_description(format!("The graphics driver stopped responding, so FreeANDIY Effects has to close.{saved}"))
                         .show();
                 }));
             }
             app.hooks.pick_open_project = Some(Box::new(|| {
-                rfd::FileDialog::new().add_filter("EffectCraft Project", &["ecproj", "ecprojx"]).pick_file().map(|p| p.to_string_lossy().to_string())
+                rfd::FileDialog::new().add_filter("FreeANDIY Effects Project", &["ecproj", "ecprojx"]).pick_file().map(|p| p.to_string_lossy().to_string())
             }));
             app.hooks.system_theme = appearance::service();
             app.hooks.audio_device = Some(Box::new(audio_out::open));
@@ -356,7 +360,7 @@ fn wgpu_options(backends: Option<eframe::wgpu::Backends>) -> eframe::WgpuConfigu
         // `WGPU_VALIDATION_INDIRECT_CALL=1` turns the check back on.
         setup.instance_descriptor.flags = setup.instance_descriptor.flags.difference(eframe::wgpu::InstanceFlags::VALIDATION_INDIRECT_CALL).with_env();
         setup.device_descriptor = std::sync::Arc::new(|adapter| eframe::wgpu::DeviceDescriptor {
-            label: Some("EffectCraft device"),
+            label: Some("FreeANDIY Effects device"),
             required_limits: device_limits(adapter.limits()),
             ..Default::default()
         });
@@ -376,7 +380,7 @@ fn device_limits(adapter: eframe::wgpu::Limits) -> eframe::wgpu::Limits {
 fn startup_failed(e: &eframe::Error, gl_next: bool) {
     let next = if gl_next { "The next launch will try OpenGL instead. " } else { "" };
     let message = format!(
-        "EffectCraft couldn't start its window: {e}\n\n{next}Updating the graphics driver often helps. If it keeps happening, please report it at https://github.com/storytold/effectcraft/issues with this message."
+        "FreeANDIY Effects couldn't start its window: {e}\n\n{next}Updating the graphics driver often helps. If it keeps happening, please report it at https://github.com/FreeAndy21/freeandiy-effects/issues with this message."
     );
     // Standard error and the session log; standard error alone when RUST_LOG turned errors off.
     if log::log_enabled!(log::Level::Error) {
@@ -386,7 +390,7 @@ fn startup_failed(e: &eframe::Error, gl_next: bool) {
     }
     let _ = rfd::MessageDialog::new()
         .set_level(rfd::MessageLevel::Error)
-        .set_title("EffectCraft")
+        .set_title("FreeANDIY Effects")
         .set_description(message)
         .set_buttons(rfd::MessageButtons::Ok)
         .show();
@@ -462,7 +466,7 @@ fn disable_app_nap() {
     {
         use objc2_foundation::{NSActivityOptions, NSProcessInfo, NSString};
         let info = NSProcessInfo::processInfo();
-        let reason = NSString::from_str("EffectCraft control channel");
+        let reason = NSString::from_str("FreeANDIY Effects control channel");
         let opts = NSActivityOptions::UserInitiatedAllowingIdleSystemSleep | NSActivityOptions::LatencyCritical;
         // Leaked on purpose: the activity lasts for the life of the process.
         std::mem::forget(info.beginActivityWithOptions_reason(opts, &reason));

@@ -1,42 +1,20 @@
-# EffectCraft app icon
+<!-- Modified-by: FreeANDIY (Free Andy Agency), 2026. Replaces upstream's icon README. -->
+# FreeANDIY Effects app icon
 
-**Creature:** a unicorn, as an engraved head-and-shoulders bust looking out of the tile.
+The angel Andy (Free Andy Agency) on the FreeANDIY Effects colour, with the `Ef` monogram. At 32 px
+and below the angel is unreadable, so those sizes show the lowercase monogram `ef` instead.
 
-**Style:** an ink engraving portrait in the Crafting Apps' owl-template framing (the FilmCraft owl):
-full-bleed colour field, tight head-and-shoulders crop, the body running off the bottom and right edges.
+These files are **generated**: do not edit them here. The source is
+`tools/make_icons.py` in the FreeANDIY meta repository (colours in `freeandiy/branding.toml`), and
+`freeandiy/scripts/regenerate.sh` copies the output from `freeandiy/assets/icons/effects/`.
 
-**Tile:** 512 × 512 viewBox, rounded square `rx=112`, clipped; no border or roundel.
-
-**Palette** (exactly three colours):
-
-| Colour | Hex | Used for |
-|---|---|---|
-| App colour (EffectCraft pink) | `#e0368f` | the full-bleed field |
-| Paper | `#efe9dc` | the figure |
-| Ink | `#0b0b0c` | line work and contour |
-
-**Provenance:** the project owner drew it in ArtCraft (a 2880 px engraving-style image, kept in
-craftrules at `assets/app-icons/effectcraft/source.png`). It was vectorised with craftrules
-`assets/logo-options/_tools/vectorize_tile.py`, which keys out the field and traces the ink with potrace.
-Licence: see [LICENSE.txt](LICENSE.txt) (MIT OR Apache-2.0, like the repo).
-
-## Files
-
-| File | What |
+| File | Use |
 |---|---|
-| `effectcraft.svg` | master vector, traced at 2048 px (canonical) |
-| `effectcraft-small.svg` | lighter vector (~350 KB), traced at 1024 px; also the web favicon |
-| `effectcraft-1024.png` | 1024 px render |
-| `effectcraft-macos-512.png` | runtime Dock icon on macOS, on Apple's 824/1024 grid |
-| `effectcraft.icns` | macOS icon (Apple grid) |
-| `effectcraft.ico` | Windows icon, 16–256 px; embedded in `effectcraft.exe` by `apps/effectcraft/build.rs` |
-| `hicolor/<n>x<n>/apps/ai.storyteller.effectcraft.png` | Linux icon theme, 16–512 px; the 256 px one is the runtime icon on Windows and Linux |
-| `hicolor/scalable/apps/ai.storyteller.effectcraft.svg` | Linux scalable icon |
+| `freeandiy-effects.svg`, `freeandiy-effects-small.svg` | vector master (trace) |
+| `freeandiy-effects-1024.png` | macOS window/Dock icon, on Apple's 824/1024 grid |
+| `freeandiy-effects.icns` | macOS bundle icon |
+| `freeandiy-effects.ico` | Windows icon, 16–256 px, embedded in the `.exe` |
+| `freeandiy-effects-mark.png` | app bar and About mark (monogram tile) |
+| `hicolor/<size>/apps/agency.freeandy.effects.png`, `hicolor/scalable/...svg` | Linux icon theme, window icon |
 
-App ID: `ai.storyteller.effectcraft` (Wayland app ID, `packaging/linux/ai.storyteller.effectcraft.desktop`).
-
-## Regenerate
-
-Copy a new `icon-master.svg` / `icon.svg` from craftrules `assets/app-icons/effectcraft/` over
-`effectcraft.svg` / `effectcraft-small.svg`, then run `packaging/icons.sh` (needs `resvg`; `iconutil`
-on macOS for the `.icns`). Copy `effectcraft-small.svg` to `apps/effectcraft-web/web/favicon.svg` too.
+© Free Andy Agency. Not open source: see `LICENSE.txt`.

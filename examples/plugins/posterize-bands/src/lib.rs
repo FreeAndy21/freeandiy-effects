@@ -16,7 +16,7 @@ const MANIFEST: &str = r#"{
   "name": "Posterize Bands",
   "category": "Stylize",
   "version": "1.0.0",
-  "author": "EffectCraft contributors",
+  "author": "FreeANDIY Effects contributors",
   "description": "Quantizes luminance into tinted bands.",
   "params": [
     {"id": "levels", "name": "Levels", "type": "slider", "default": 4, "min": 2, "max": 64, "sliderMax": 16, "decimals": 0},

@@ -1,4 +1,4 @@
-//! UI-side everyday-operation timings for `effectcraft-cli bench --ops` (see
+//! UI-side everyday-operation timings for `freeandiy-effects-cli bench --ops` (see
 //! `effectcraft_engine::perf` for the engine side): the app's first frame, and steady frames of
 //! the Timeline (scrolling a 5,000-layer comp) and the Project panel (300+ items), measured
 //! headless — layout, painting and tessellation, without a window or GPU upload.

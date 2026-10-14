@@ -1,9 +1,9 @@
 //! Everyday-operation performance: a large generated project and the engine-side measurements
-//! behind `effectcraft-cli bench --ops` (open, save, auto-save, large edits with undo/redo, first
+//! behind `freeandiy-effects-cli bench --ops` (open, save, auto-save, large edits with undo/redo, first
 //! frame). The UI-side numbers (first UI frame, timeline and Project panel draw) live in
 //! `effectcraft-ui-egui`'s `bench` module. See `docs/architecture.md` ▸ Performance.
 
-// A benchmark harness (`effectcraft-cli bench --ops`, tests): a failed step should fail loudly,
+// A benchmark harness (`freeandiy-effects-cli bench --ops`, tests): a failed step should fail loudly,
 // as in tests and benches (AGENTS.md, "Never crash"). Nothing here runs in the app.
 #![allow(clippy::expect_used)]
 

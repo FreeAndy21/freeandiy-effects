@@ -4,7 +4,12 @@ description = "EffectCraft desktop app"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-default-run = "effectcraft"
+default-run = "freeandiy-effects"
+
+# FreeANDIY: the executable carries the product name; the package keeps upstream's.
+[[bin]]
+name = "freeandiy-effects"
+path = "src/main.rs"
 
 [lints]
 workspace = true

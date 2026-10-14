@@ -183,7 +183,7 @@ impl Tokens {
             row_h: 19.0,
             gradients: true,
         };
-        match kind {
+        let tokens = match kind {
             ThemeKind::Dark => dark,
             ThemeKind::Darker => Tokens {
                 app_bg: Color32::from_rgb(0x08, 0x08, 0x08),
@@ -236,7 +236,8 @@ impl Tokens {
                 expr_text: Color32::from_rgb(0xa3, 0x34, 0x17),
                 ..dark
             },
-        }
+        };
+        crate::freeandiy::tokens(tokens)
     }
 
     pub fn mono(size: f32) -> FontId {
@@ -340,6 +341,7 @@ pub fn install(ctx: &egui::Context, t: &Tokens, language: &str) {
     fonts.families.entry(FontFamily::Monospace).or_default().insert(0, "jbmono".into());
     fonts.families.insert(FontFamily::Name("semibold".into()), vec!["inter-semibold".into(), "inter".into()]);
     fonts.families.insert(FontFamily::Name("medium".into()), vec!["inter-medium".into(), "inter".into()]);
+    crate::freeandiy::ui_fonts(&mut fonts);
     // Inter and egui's own fallbacks have no small triangles (the `▸` of "File ▸ Import"), which
     // would draw as missing-glyph boxes: JetBrains Mono fills in the symbols the others lack.
     for (family, stack) in &mut fonts.families {
@@ -505,6 +507,7 @@ pub fn apply_visuals(ctx: &egui::Context, t: &Tokens) {
     v.widgets.active.fg_stroke = Stroke::new(1.0, t.tab_text_active);
     v.widgets.open.bg_fill = t.hover;
     v.widgets.open.weak_bg_fill = t.hover;
+    crate::freeandiy::visuals(&mut v);
     // egui keeps one style per light/dark theme and picks it by its theme preference (see
     // [`theme_preference`]); both get ours, so whichever it picks, egui's defaults never show.
     ctx.all_styles_mut(|s| {

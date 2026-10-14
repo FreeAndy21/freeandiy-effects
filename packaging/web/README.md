@@ -1,7 +1,7 @@
 # Hosting EffectCraft for the web
 
-`effectcraft-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
-static site in `effectcraft-web-<version>/`:
+`freeandiy-effects-<version>-web-wasm32.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
+static site in `freeandiy-effects-<version>-web-wasm32/`:
 
 | File | What it is |
 |---|---|
@@ -20,13 +20,13 @@ There is no server-side code. Upload the folder's contents anywhere that serves 
 All URLs in `index.html` are relative: the page is written that way
 (`apps/effectcraft-web/web/index.html`), and `package.sh` refuses a build with root-absolute
 URLs. So the site works at a domain root (`https://example.com/`), under a prefix
-(`https://example.com/tools/effectcraft/`) and from a CDN bucket.
+(`https://example.com/tools/freeandiy-effects/`) and from a CDN bucket.
 
 The file names are the same in every release (`effectcraft_web_bg.wasm` and so on), so browsers
 must revalidate them: a long-lived cache would keep returning visitors on the old version after
 you upgrade in place. Revalidation is cheap (an unchanged file answers `304 Not Modified`), and
 the service worker keeps the app for offline use after the first visit. To cache the files for
-longer, serve each release from its own versioned path (`/effectcraft/0.4.0/`).
+longer, serve each release from its own versioned path (`/freeandiy-effects/0.4.0/`).
 
 ## Required server settings
 
@@ -48,7 +48,7 @@ longer, serve each release from its own versioned path (`/effectcraft/0.4.0/`).
 nginx example:
 
 ```nginx
-location /effectcraft/ {
+location /freeandiy-effects/ {
     types { application/wasm wasm; text/javascript js; text/html html; }
     gzip on;
     gzip_types application/wasm text/javascript text/html;
@@ -62,7 +62,7 @@ Local test: `python3 -m http.server 8765` inside the folder, then open http://lo
 
 ```html
 <iframe
-  src="https://example.com/effectcraft/"
+  src="https://example.com/freeandiy-effects/"
   title="EffectCraft"
   style="width: 100%; height: 720px; border: 0;"
   allow="fullscreen; clipboard-read; clipboard-write"
@@ -74,7 +74,7 @@ Local test: `python3 -m http.server 8765` inside the folder, then open http://lo
 - Keyboard shortcuts go to the iframe after the user clicks into it, as with any embedded app.
 - **Cross-origin embeds** work. Preferences, projects and imported media are kept in the
   iframe origin's browser storage: the Origin Private File System, else IndexedDB, else memory
-  only (`effectcraft.info().storage.backend` says which; see `docs/web.md` › Persistence).
+  only (`freeandiy-effects.info().storage.backend` says which; see `docs/web.md` › Persistence).
   Browsers that partition or block third-party storage may forget them between visits, and the
   app then starts with defaults.
 - **Sandboxed iframes** need at least
@@ -94,6 +94,6 @@ EffectCraft renders with wgpu. It uses **WebGPU** when the browser has it and fa
 | `?webgl` | Force the WebGL2 backend (useful when a WebGPU driver misbehaves) |
 | `?cpu` | Force the CPU canvas path (slowest, most compatible) |
 
-For example: `<iframe src="https://example.com/effectcraft/?webgl" ...>`.
+For example: `<iframe src="https://example.com/freeandiy-effects/?webgl" ...>`.
 
 A browser with neither WebGPU nor WebGL2 gets a message in place of the app.

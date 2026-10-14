@@ -1,27 +1,25 @@
-//! Community and project links (shown in Help ▸, the About dialog, the start screen and the
-//! header's Discord button).
+//! Project links (shown in Help ▸, the About dialog, the start screen and the header).
 
-pub const APP_NAME: &str = "EffectCraft";
+pub const APP_NAME: &str = "FreeANDIY Effects";
 pub const APP_SLUG: &str = "effectcraft";
-pub const DISCORD: &str = "https://discord.gg/artcraft";
-pub const WEBSITE: &str = "https://getartcraft.com";
-pub const APP_PAGE: &str = "https://getartcraft.com/apps/effectcraft";
-pub const GITHUB: &str = "https://github.com/storytold/effectcraft";
-pub const ISSUES: &str = "https://github.com/storytold/effectcraft/issues";
+pub const WEBSITE: &str = "https://freeandiy.freeandy.agency";
+pub const APP_PAGE: &str = "https://freeandiy.freeandy.agency/effects";
+pub const GITHUB: &str = "https://github.com/FreeAndy21/freeandiy-effects";
+pub const ISSUES: &str = "https://github.com/FreeAndy21/freeandiy-effects/issues";
 
-/// Sibling apps of the ArtCraft family: (name, what it is, GitHub repo, app page).
+/// The other FreeANDIY apps: (name, slug on the website and in the `freeandiy-<slug>` repository).
 pub const SIBLINGS: &[(&str, &str)] = &[
-    ("PhotoCraft", "photocraft"),
-    ("VectorCraft", "vectorcraft"),
-    ("FilmCraft", "filmcraft"),
-    ("LightCraft", "lightcraft"),
-    ("PdfCraft", "pdfcraft"),
-    ("DesignCraft", "designcraft"),
+    ("FreeANDIY Photo", "photo"),
+    ("FreeANDIY Vector", "vector"),
+    ("FreeANDIY Film", "film"),
+    ("FreeANDIY Light", "light"),
+    ("FreeANDIY PDF", "pdf"),
+    ("FreeANDIY Layout", "layout"),
 ];
 
 pub fn github_of(slug: &str) -> String {
-    format!("https://github.com/storytold/{slug}")
+    format!("https://github.com/FreeAndy21/freeandiy-{slug}")
 }
 pub fn page_of(slug: &str) -> String {
-    format!("https://getartcraft.com/apps/{slug}")
+    format!("{WEBSITE}/{slug}")
 }

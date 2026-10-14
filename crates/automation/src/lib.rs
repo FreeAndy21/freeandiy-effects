@@ -8,7 +8,7 @@
 //!   **bridge** forwards to a running desktop app over its JSON-lines control channel
 //!   (`effectcraft --control 9877`, `docs/control-protocol.md`), adding screenshots and UI input.
 //! * [`tools`]: the tool catalogue (names, descriptions, JSON schemas) and their implementations,
-//!   shared by the MCP server and `effectcraft-cli`'s one-shot subcommands.
+//!   shared by the MCP server and `freeandiy-effects-cli`'s one-shot subcommands.
 //!
 //! Layering: depends on `effectcraft-engine` only (never egui); the CLI injects a fully wired
 //! session (`effectcraft_host::session()`).

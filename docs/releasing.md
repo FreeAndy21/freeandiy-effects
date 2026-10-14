@@ -62,7 +62,7 @@ jobs are refused by the environment's branch rule, and no draft release is made.
 | Linux AppImage updates | `effectcraft-<v>-linux-{x86_64,aarch64}.AppImage.zsync` | with the AppImages |
 | Flatpak x86_64, aarch64 | `effectcraft-<v>-linux-{x86_64,aarch64}.flatpak` (the Linux tarball, repackaged) | `ubuntu-24.04`, `ubuntu-24.04-arm` |
 | FreeBSD 14+ x86_64 | `effectcraft-<v>-freebsd-x86_64.tar.gz` | a FreeBSD 14.3 VM on `ubuntu-latest` |
-| Web | `effectcraft-web-<v>.zip` (a static site; see [web.md](web.md)) | `ubuntu-latest` |
+| Web | `freeandiy-effects-<v>-web-wasm32.zip` (a static site; see [web.md](web.md)) | `ubuntu-latest` |
 
 The ARM64 MSI is installed and run on ARM64 hardware by
 [`windows-arm64.yml`](../.github/workflows/windows-arm64.yml).

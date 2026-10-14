@@ -16,23 +16,6 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 | `assets/fonts/Inter-Italic.ttf` | The Inter Project Authors | https://github.com/rsms/inter | OFL-1.1 (`assets/fonts/OFL-Inter.txt`) |
 | `assets/fonts/NotoSerif-Regular.ttf` | The Noto Project Authors | https://github.com/notofonts/latin-greek-cyrillic | OFL-1.1 (`assets/fonts/OFL-NotoSerif.txt`) |
 | `assets/fonts/JetBrainsMono-Regular.ttf` | The JetBrains Mono Project Authors | https://github.com/JetBrains/JetBrainsMono | OFL-1.1 (`assets/fonts/OFL-JetBrainsMono.txt`) |
-| `apps/effectcraft-web/web/favicon.svg` | EffectCraft contributors | Original work: web app icon, a copy of `assets/app-icon/effectcraft-small.svg` (the unicorn app icon) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `packaging/macos/dmg/background.svg` | @XusBadia | Original work: macOS DMG Finder window background, derived from the EffectCraft app icon (`assets/app-icon/effectcraft.svg`); rendered to a TIFF by `packaging/macos/package.sh` at package time | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
-| `assets/app-icon/effectcraft-1024.png` | EffectCraft contributors | Original work: effectCraft app icon, 1024 px (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/effectcraft-macos-512.png` | EffectCraft contributors | Original work: effectCraft runtime Dock icon (macOS) (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/effectcraft-small.svg` | EffectCraft contributors | Original work: effectCraft app icon, light vector (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/effectcraft.icns` | EffectCraft contributors | Original work: effectCraft macOS app icon (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/effectcraft.ico` | EffectCraft contributors | Original work: effectCraft Windows app icon (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/effectcraft.svg` | EffectCraft contributors | Original work: effectCraft app icon, master vector (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/128x128/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 128x128 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/16x16/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 16x16 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/24x24/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 24x24 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/256x256/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 256x256 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/32x32/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 32x32 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/48x48/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 48x48 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/512x512/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 512x512 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor 64x64 (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/scalable/apps/ai.storyteller.effectcraft.svg` | EffectCraft contributors | Original work: effectCraft app icon, Linux hicolor scalable (owner's ArtCraft unicorn drawing, vectorised) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `crates/lottie/tests/fixtures/bouncing-ball.json` | EffectCraft contributors | Original work: hand-written Lottie test fixture (bouncing ball, eased position keys) | MIT OR Apache-2.0 |
 | `crates/lottie/tests/fixtures/shapes-gradient.json` | EffectCraft contributors | Original work: hand-written Lottie test fixture (star, rectangle, gradient fill, dashed stroke, trim paths) | MIT OR Apache-2.0 |
 | `crates/lottie/tests/fixtures/precomp-matte-text.json` | EffectCraft contributors | Original work: hand-written Lottie test fixture (precomp, track matte, parented text) | MIT OR Apache-2.0 |
@@ -114,13 +97,19 @@ under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt). Forks and 
 
 | File | Author | Source | Licence |
 |---|---|---|---|
-| `docs/brand/artcraft-logo-white.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark, light ink for dark backgrounds) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-logo-white.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark, light ink for dark backgrounds) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-logo.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark (symbol + "ARTCRAFT"), dark ink for light backgrounds) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-logo.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark (symbol + "ARTCRAFT"), dark ink for light backgrounds) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-mark-black.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), black) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-mark-black.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), black) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-mark.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), blue) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
-| `docs/brand/artcraft-mark.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), blue) | ArtCraft brand terms, not open source (`docs/brand/LICENSE-brand.txt`) |
 
 - Appearance theme previews, drawn procedurally from original shapes: `crates/ui-egui/src/panels/settings.rs` (original work, MIT OR Apache-2.0).
+
+## FreeANDIY (added by the FreeANDIY fork)
+
+Every file under these directories is covered by its row.
+
+| Asset | Author | Source | Licence | Notes |
+|---|---|---|---|---|
+| `freeandiy/assets/fonts/` | IBM Corp. (IBM Plex Sans, IBM Plex Mono); The Roboto Project Authors (Roboto) | https://github.com/IBM/plex, https://github.com/googlefonts/roboto-3-classic | OFL-1.1 (`freeandiy/assets/fonts/OFL-*.txt`) | UI fonts (Plex) and long-form text (Roboto) |
+| `freeandiy/assets/brand/` | Free Andy Agency | Original work | **Not open source**: © Free Andy Agency, all rights reserved (`freeandiy/assets/brand/LICENSE-brand.txt`) | FreeANDIY and Free Andy Agency names, the angel Andy, lettering, logotypes, seal |
+| `freeandiy/assets/icons/` | Free Andy Agency | Original work, generated by `tools/make_icons.py` (FreeANDIY meta repository) | **Not open source**: © Free Andy Agency (`freeandiy/assets/brand/LICENSE-brand.txt`) | App icons |
+| `freeandiy/assets/dmg/` | Free Andy Agency | Original work, generated by `freeandiy/tools/make_dmg.py` | **Not open source**: © Free Andy Agency (`freeandiy/assets/brand/LICENSE-brand.txt`) | DMG background and layout |
+| `assets/app-icon/` | Free Andy Agency | Copied from `freeandiy/assets/icons/effects/` by the rebrand | **Not open source**: © Free Andy Agency (`freeandiy/assets/brand/LICENSE-brand.txt`) | App icon |
+| `packaging/macos/dmg/` | Free Andy Agency | Copied from `freeandiy/assets/dmg/` by the rebrand | **Not open source**: © Free Andy Agency (`freeandiy/assets/brand/LICENSE-brand.txt`) | DMG background and layout |
+| `apps/effectcraft-web/web/favicon.svg` | Free Andy Agency | Copied from `freeandiy/assets/icons/effects/favicon.svg` by the rebrand | **Not open source**: © Free Andy Agency (`freeandiy/assets/brand/LICENSE-brand.txt`) | Web app icon |
