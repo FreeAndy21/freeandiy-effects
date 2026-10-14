@@ -1,0 +1,33 @@
+diff --git a/apps/effectcraft-cli/Cargo.toml b/apps/effectcraft-cli/Cargo.toml
+index b5784f4e..07dea27a 100644
+--- a/apps/effectcraft-cli/Cargo.toml
++++ b/apps/effectcraft-cli/Cargo.toml
+@@ -8,8 +8,9 @@ license.workspace = true
+ [lints]
+ workspace = true
+ 
++# FreeANDIY: the executable carries the product name; the package keeps upstream's.
+ [[bin]]
+-name = "effectcraft-cli"
++name = "freeandiy-effects-cli"
+ path = "src/main.rs"
+ 
+ [dependencies]
+diff --git a/apps/effectcraft/Cargo.toml b/apps/effectcraft/Cargo.toml
+index 5ad6c80d..545211e4 100644
+--- a/apps/effectcraft/Cargo.toml
++++ b/apps/effectcraft/Cargo.toml
+@@ -4,7 +4,12 @@ description = "EffectCraft desktop app"
+ version.workspace = true
+ edition.workspace = true
+ license.workspace = true
+-default-run = "effectcraft"
++default-run = "freeandiy-effects"
++
++# FreeANDIY: the executable carries the product name; the package keeps upstream's.
++[[bin]]
++name = "freeandiy-effects"
++path = "src/main.rs"
+ 
+ [lints]
+ workspace = true
