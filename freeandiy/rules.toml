@@ -287,6 +287,20 @@ skip_comments = ["//"]
 min = 0
 
 [[replace]]
+name = "portable data folder"
+include = ["**/*.rs", "packaging/**"]
+find = "EffectCraftData"
+replace = "{{this.name}} Data"
+min = 2
+
+[[replace]]
+name = "product name in the Rust catalogs (any script may follow it)"
+include = ["crates/ui-egui/src/i18n.rs", "crates/ui-egui/src/i18n/*.rs"]
+find = "EffectCraft"
+replace = "{{this.name}}"
+min = 10
+
+[[replace]]
 name = "product name EffectCraft (Rust code, not comments; whole word)"
 include = ["**/*.rs"]
 exclude = ["xtask/**", "vendor/**"]
