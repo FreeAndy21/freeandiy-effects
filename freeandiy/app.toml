@@ -17,5 +17,6 @@ ci_tests = "true"
 [check]
 # check-branding.sh: extra allowed strings (regex) and Rust paths where the upstream name may stay
 # in string literals (git pathspecs, space-separated).
-allow = "EffectCraftProject"
+# Also: the bundled text animator presets credit their upstream authors in a note.
+allow = "EffectCraftProject|Original EffectCraft text animator presets"
 rs_exclude = ":!xtask/**"
