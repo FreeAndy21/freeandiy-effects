@@ -19,5 +19,5 @@ ci_tests = "true"
 # in string literals (git pathspecs, space-separated).
 # Also: the bundled text animator presets credit their upstream authors in a note.
 
-allow = "EffectCraftProject|Original EffectCraft [a-z]+ presets"
+allow = "EffectCraftProject|Original EffectCraft [a-z ]+ presets"
 rs_exclude = ":!xtask/**"
