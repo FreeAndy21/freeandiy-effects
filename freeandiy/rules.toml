@@ -34,8 +34,8 @@ min = 1
 # The header's Discord link is gone, so its catalog rows are unused.
 [[drop_lines]]
 include = ["crates/ui-egui/src/i18n/ui.rs"]
-regex = '^\s*\("Discord", '
-min = 7
+regex = '^\s*\("[^"]*Discord[^"]*", '
+min = 14
 
 # ---------------------------------------------------------------------------------------------
 # Identifiers, maintainers, URLs.
