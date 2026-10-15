@@ -7,9 +7,8 @@
 //! Motion graphics are judged against neutral greys, so the three themes keep upstream's panel
 //! colours; FreeANDIY changes the accent (stamp rose), corners and shadows.
 
-use std::sync::Arc;
 
-use egui::{Color32, Context, FontData, FontDefinitions, FontFamily, Id, Rect, TextureHandle, TextureOptions, Ui, Visuals};
+use egui::{Color32, Context, FontDefinitions, Id, Rect, TextureHandle, TextureOptions, Ui, Visuals};
 
 use crate::theme::Tokens;
 
@@ -34,23 +33,10 @@ pub fn visuals(v: &mut Visuals) {
     v.window_shadow = egui::epaint::Shadow::NONE;
 }
 
-/// The interface font: IBM Plex Sans (SIL Open Font License 1.1; licence in
-/// freeandiy/assets/fonts/) first, upstream's Inter right after for what Plex lacks. Desktop only:
-/// the web build keeps its fonts, so the wasm does not grow.
+/// The interface font. FreeANDIY Effects keeps upstream's Inter: its forms and popups are sized to
+/// Inter's widths, and IBM Plex Sans makes a long choice outgrow its field. The hook stays so the
+/// face can change in one place.
 pub fn ui_fonts(fonts: &mut FontDefinitions) {
-    #[cfg(not(target_arch = "wasm32"))]
-    {
-        let faces: [(FontFamily, &str, &'static [u8]); 3] = [
-            (FontFamily::Proportional, "plex", include_bytes!("../../../freeandiy/assets/fonts/IBMPlexSans-Regular.ttf")),
-            (FontFamily::Name("medium".into()), "plex-medium", include_bytes!("../../../freeandiy/assets/fonts/IBMPlexSans-Medium.ttf")),
-            (FontFamily::Name("semibold".into()), "plex-semibold", include_bytes!("../../../freeandiy/assets/fonts/IBMPlexSans-SemiBold.ttf")),
-        ];
-        for (family, key, bytes) in faces {
-            fonts.font_data.insert(key.to_string(), Arc::new(FontData::from_static(bytes)));
-            fonts.families.entry(family).or_default().insert(0, key.to_string());
-        }
-    }
-    #[cfg(target_arch = "wasm32")]
     let _ = fonts;
 }
 
