@@ -19,5 +19,5 @@ ci_tests = "true"
 # in string literals (git pathspecs, space-separated).
 # Also: the bundled text animator presets credit their upstream authors in a note.
 # Also: the ScriptUI shim reports frameworkName "EffectCraft", which scripts may test for.
-allow = "EffectCraftProject|Original EffectCraft text animator presets|frameworkName: .EffectCraft."
+allow = "EffectCraftProject|Original EffectCraft text animator presets|frameworkName: .EffectCraft.|return .EffectCraft."
 rs_exclude = ":!xtask/**"
