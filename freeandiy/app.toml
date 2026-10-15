@@ -18,6 +18,6 @@ ci_tests = "true"
 # check-branding.sh: extra allowed strings (regex) and Rust paths where the upstream name may stay
 # in string literals (git pathspecs, space-separated).
 # Also: the bundled text animator presets credit their upstream authors in a note.
-# Also: the ScriptUI shim reports frameworkName "EffectCraft", which scripts may test for.
-allow = "EffectCraftProject|Original EffectCraft text animator presets|frameworkName: .EffectCraft.|return .EffectCraft."
+
+allow = "EffectCraftProject|Original EffectCraft [a-z]+ presets"
 rs_exclude = ":!xtask/**"

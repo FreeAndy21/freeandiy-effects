@@ -537,3 +537,11 @@ include = ["crates/ui-egui/src/header.rs"]
 find = "use crate::icons::{self, Icon};"
 replace = "use crate::icons::Icon;"
 min = 1
+
+[[replace]]
+name = "scripting and web host: the product name scripts and web users see (not in comments)"
+include = ["crates/script/src/*.js", "crates/expr/src/*.js", "apps/effectcraft-web/js/*.js", "apps/effectcraft-web/web/*.js"]
+regex = '\bEffectCraft\b'
+replace = "{{this.name}}"
+skip_comments = ["//"]
+min = 5
