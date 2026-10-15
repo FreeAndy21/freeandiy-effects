@@ -551,3 +551,13 @@ regex = '\bEffectCraft\b'
 replace = "{{this.name}}"
 skip_comments = ["//"]
 min = 5
+
+[[replace]]
+name = "DMG: FreeANDIY's background is a ready TIFF (freeandiy/assets/dmg), not rendered from an SVG"
+include = ["packaging/macos/package.sh"]
+regex = '''(?s)# The background is rendered from its SVG.*?-out "\$STAGE/\.background/background\.tiff"\n'''
+replace = '''# FreeANDIY: the background is a ready 1x + 2x HiDPI TIFF (freeandiy/tools/make_dmg.py).
+mkdir -p "$$STAGE/.background"
+cp "$$HERE/dmg/background.tiff" "$$STAGE/.background/background.tiff"
+'''
+min = 1
