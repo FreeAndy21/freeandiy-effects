@@ -31,6 +31,12 @@ include = ["crates/ui-egui/src/i18n.rs"]
 regex = '^\s*\("help\.discord",'
 min = 1
 
+# The header's Discord link is gone, so its catalog rows are unused.
+[[drop_lines]]
+include = ["crates/ui-egui/src/i18n/ui.rs"]
+regex = '^\s*\("Discord", '
+min = 7
+
 # ---------------------------------------------------------------------------------------------
 # Identifiers, maintainers, URLs.
 
