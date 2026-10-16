@@ -91,9 +91,29 @@ Copy-Item (Join-Path $Bin 'freeandiy-effects.exe'), (Join-Path $Bin 'freeandiy-e
 & (Join-Path $PSScriptRoot 'sign.ps1') (Join-Path $Stage 'freeandiy-effects.exe') (Join-Path $Stage 'freeandiy-effects-cli.exe')
 
 # ---- MSI ---------------------------------------------------------------------------------------
+# FreeANDIY: the MSI installs these next to the app (Apache-2.0 4(d); same set as the portable ZIP).
+$FaNotices = Join-Path $Stage 'freeandiy-notices'
+Remove-Item -Recurse -Force $FaNotices -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path $FaNotices | Out-Null
+foreach ($f in 'LICENSE', 'LICENSE-MIT', 'LICENSE-APACHE', 'NOTICE', 'ATTRIBUTION.md', 'ASSETS.md') {
+  $p = Join-Path $Root $f
+  if (Test-Path $p) { Copy-Item $p $FaNotices }
+}
+Copy-Item (Join-Path $Root 'freeandiy\assets\fonts\OFL-*.txt') $FaNotices
+Copy-Item (Join-Path $Root 'freeandiy\assets\brand\LICENSE-brand.txt') (Join-Path $FaNotices 'LICENSE-FreeANDIY-brand.txt')
+if ($env:CRAFT_FONTS_DIR) {
+  Get-ChildItem -Path (Join-Path $env:CRAFT_FONTS_DIR 'fonts') -Directory -ErrorAction SilentlyContinue | ForEach-Object {
+    $lic = Join-Path $_.FullName 'OFL.txt'
+    if (Test-Path $lic) { Copy-Item $lic (Join-Path $FaNotices "OFL-$($_.Name).txt") }
+  }
+}
+foreach ($f in 'LICENSE-MIT', 'LICENSE-APACHE', 'NOTICE', 'ATTRIBUTION.md') {
+  if (-not (Test-Path (Join-Path $FaNotices $f))) { throw "MSI notices: $f is missing" }
+}
+
 $Msi = Join-Path $Dist "freeandiy-effects-$Version-windows-$Arch.msi"
 Invoke-Native 'wix build' {
-  wix build (Join-Path $PSScriptRoot 'effectcraft.wxs') (Join-Path $PSScriptRoot 'installer-ui.wxs') -arch $Arch `
+  wix build (Join-Path $PSScriptRoot 'effectcraft.wxs') (Join-Path $PSScriptRoot 'installer-ui.wxs') -arch $Arch -d "NoticesDir=$FaNotices" `
     -d "Version=$MsiVersion" -d "BinDir=$Stage" -d "IconPath=$(Join-Path $Root 'assets\app-icon\freeandiy-effects.ico')" `
     -o $Msi
 }
