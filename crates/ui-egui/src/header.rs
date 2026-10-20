@@ -186,7 +186,7 @@ pub fn show(app: &mut EffectcraftApp, ui: &mut egui::Ui, rect: Rect) {
     let mut rx = rect.max.x - 10.0;
     for (id, icon, tip, cmd) in [
         ("hdr-github", Icon::Code, "FreeANDIY Effects on GitHub", "help.github"),
-        ("hdr-web", Icon::Globe, "FreeANDIY Effects on freeandiy.freeandy.agency", "help.appPage"),
+        ("hdr-web", Icon::Globe, "FreeANDIY Effects on freeandiy-web.vercel.app", "help.appPage"),
     ] {
         let r = Rect::from_min_max(pos2(rx - 26.0, cy - 13.0), pos2(rx, cy + 13.0));
         if widgets::icon_button(ui, r, icon, false, &t, egui::Id::new(id)).on_hover_text(tip).clicked() {

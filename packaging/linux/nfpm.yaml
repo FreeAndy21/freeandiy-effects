@@ -14,7 +14,7 @@ section: graphics
 priority: optional
 maintainer: ${EFFECTCRAFT_MAINTAINER}
 vendor: Free Andy Agency
-homepage: https://freeandiy.freeandy.agency/effects
+homepage: https://freeandiy-web.vercel.app/effects
 license: MIT OR Apache-2.0
 description: |-
   Open-source motion graphics and visual effects compositor.

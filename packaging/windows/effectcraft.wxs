@@ -27,8 +27,8 @@
 
     <Icon Id="EffectcraftIcon.ico" SourceFile="$(var.IconPath)" />
     <Property Id="ARPPRODUCTICON" Value="EffectcraftIcon.ico" />
-    <Property Id="ARPURLINFOABOUT" Value="https://freeandiy.freeandy.agency/effects" />
-    <Property Id="ARPURLUPDATEINFO" Value="https://freeandiy.freeandy.agency/effects" />
+    <Property Id="ARPURLINFOABOUT" Value="https://freeandiy-web.vercel.app/effects" />
+    <Property Id="ARPURLUPDATEINFO" Value="https://freeandiy-web.vercel.app/effects" />
     <Property Id="ARPHELPLINK" Value="https://github.com/FreeAndy21/freeandiy-effects/issues" />
 
     <!-- An upgrade, repair or silent reinstall goes where the installed copy already is: the App Paths

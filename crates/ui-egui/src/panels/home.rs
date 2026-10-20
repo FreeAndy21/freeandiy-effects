@@ -272,7 +272,7 @@ fn rail_ui(app: &mut EffectcraftApp, ui: &mut egui::Ui, p: &egui::Painter, rail:
     }
     // Community links at the foot (below the pages when the window is short).
     let links = [
-        (Icon::Globe, "freeandiy.freeandy.agency", "help.website"),
+        (Icon::Globe, "freeandiy-web.vercel.app", "help.website"),
         (Icon::Globe, "FreeANDIY Effects home page", "help.appPage"),
         (Icon::Code, "FreeANDIY Effects on GitHub", "help.github"),
     ];

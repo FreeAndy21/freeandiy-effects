@@ -2,8 +2,8 @@
 
 pub const APP_NAME: &str = "FreeANDIY Effects";
 pub const APP_SLUG: &str = "effectcraft";
-pub const WEBSITE: &str = "https://freeandiy.freeandy.agency";
-pub const APP_PAGE: &str = "https://freeandiy.freeandy.agency/effects";
+pub const WEBSITE: &str = "https://freeandiy-web.vercel.app";
+pub const APP_PAGE: &str = "https://freeandiy-web.vercel.app/effects";
 pub const GITHUB: &str = "https://github.com/FreeAndy21/freeandiy-effects";
 pub const ISSUES: &str = "https://github.com/FreeAndy21/freeandiy-effects/issues";
 
